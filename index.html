@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD </title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container py-5">
+    <div class="p-3 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+    <h2 class="text-center pb-5">Product Manage</h2>
+    <label class="m-2 d-block" for="productName">Product Name</label>
+    <input class="form-control p-2" type="text" placeholder="Enter Product Name " id="productName" oninput="validePName()">
+    <small id="errorName" class="mb-2 ms-2 d-none" >Product Name must start with capitel letter and have at lest 4 char</small>
+    <label class="m-2 d-block" for="productPrice">Product Price</label>
+    <input class="form-control p-2 " type="number" placeholder="Enter Product Price " id="productPrice" oninput="validePPrice()">
+    <small id="errorPrice" class=" ms-2 d-none" >Product Price must be between 1000-10000</small>
+    <label class="m-2 d-block" for="productCategory">Product Category</label>
+    <input class="form-control p-2 " type="text" placeholder="Enter Product Category " id="productCategory" oninput="validePCategory()">
+    <small id="errorCategory" class="ms-2  d-none" >Product Category must start with capitel letter and have at lest 4 char</small>
+    <label class="m-2 d-block" for="productNumber">Product Number</label>
+    <input class="form-control p-2 " type="number" placeholder="Enter Product Number " id="productNumber" oninput="validePNumber()" >
+    <small id="errorNumber" class="ms-2  d-none" >Product Number must writen</small>
+
+    <label class="m-2 d-block" for="productDesc">Product Describtion</label>
+    <textarea class="form-control p-2 " type="text" cols=" " rows="" placeholder="Enter Product Describtion " id="productDesc" oninput="validePDesc()"></textarea>
+    <small id="errorDesc" class="ms-2 d-none" >Product Describtion  must not less than 20 char</small>
+    <button id="addProductes" class="btn btn-outline-secondary d-block my-2" onclick="addProduct()">Add Product</button>
+    <button id="UpdatePro" class="btn btn-outline-success d-none my-2 " onclick=" finalUpdate(this.value)"  >Update Product</button>
+ 
+    <input oninput="serProduct(this.value) " class="form-control p-2  w-75 my-4" type="text" placeholder="Enter Product search " id="productSearch">
+    <h3 id="formError" class="text-center py-5 ">cheak the form and complete with right value</h3>
+    </div>
+    
+    
+    <h2 class="text-center py-5">List Of Product</h2>
+    <table class="w-100 table text-center">
+      <thead class="table-primary py-5" >
+          <tr >
+            <th>Product number</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th >Product Category</th>
+            <th >Product Number</th>
+            <th >Product Describtion</th>
+            <th>Edit </th>
+            <th>Delete </th>
+        </tr>
+      </thead>
+      <tbody id="productDisplay">
+
+      </tbody>
+    
+
+    </table>
+  </div>
+
+  <!--  -->
+  <script src="js/all.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/index.js"></script>
+
+</body>
+</html>
